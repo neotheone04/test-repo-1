@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Jot</title>
+  <meta name="theme-color" content="#4F46E5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Jot" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Jot</h1>
+  </header>
+
+  <main>
+    <!-- Quick capture -->
+    <section class="capture">
+      <input id="capture-title" type="text" placeholder="What's on your mind?" autocomplete="off" />
+      <textarea id="capture-note" placeholder="Add a note (optional)" rows="2"></textarea>
+      <button id="capture-save" class="btn-primary">Save</button>
+    </section>
+
+    <!-- Views -->
+    <section id="view-inbox" class="view active">
+      <div class="view-header">
+        <h2>Inbox</h2>
+        <span class="count" id="inbox-count"></span>
+      </div>
+      <ul class="item-list" id="inbox-list"></ul>
+      <p class="empty-state" id="inbox-empty">Nothing here — jot something down above.</p>
+    </section>
+
+    <section id="view-tasks" class="view">
+      <div class="view-header">
+        <h2>Tasks</h2>
+        <span class="count" id="tasks-count"></span>
+      </div>
+      <ul class="item-list" id="tasks-list"></ul>
+      <p class="empty-state" id="tasks-empty">No tasks yet.</p>
+    </section>
+
+    <section id="view-ideas" class="view">
+      <div class="view-header">
+        <h2>Ideas</h2>
+        <span class="count" id="ideas-count"></span>
+      </div>
+      <ul class="item-list" id="ideas-list"></ul>
+      <p class="empty-state" id="ideas-empty">No ideas yet.</p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-view="inbox">
+      <span class="nav-icon">📥</span>
+      <span>Inbox</span>
+    </button>
+    <button class="nav-btn" data-view="tasks">
+      <span class="nav-icon">✅</span>
+      <span>Tasks</span>
+    </button>
+    <button class="nav-btn" data-view="ideas">
+      <span class="nav-icon">💡</span>
+      <span>Ideas</span>
+    </button>
+  </nav>
+
+  <!-- Edit / sort sheet -->
+  <div id="sheet-backdrop" class="sheet-backdrop"></div>
+  <div id="sheet" class="sheet">
+    <div class="sheet-handle"></div>
+    <input id="sheet-title" type="text" placeholder="Title" />
+    <textarea id="sheet-note" placeholder="Note" rows="3"></textarea>
+    <div id="sheet-due-row" class="sheet-due-row">
+      <label for="sheet-due">Due date</label>
+      <input id="sheet-due" type="date" />
+    </div>
+    <div class="sheet-actions" id="sheet-sort-actions">
+      <button class="btn-secondary" data-make="task">Make it a Task</button>
+      <button class="btn-secondary" data-make="idea">Make it an Idea</button>
+    </div>
+    <div class="sheet-actions">
+      <button id="sheet-save" class="btn-primary">Save</button>
+      <button id="sheet-delete" class="btn-danger">Delete</button>
+    </div>
+    <button id="sheet-cancel" class="btn-text">Cancel</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
