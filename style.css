@@ -385,3 +385,93 @@ main {
   display: flex;
   gap: 10px;
 }
+
+/* Daily feed */
+.day-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  margin-bottom: 14px;
+}
+
+.day-heading {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.day-note {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.day-note:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.day-log {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.day-log-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  cursor: pointer;
+  border-top: 1px solid var(--border);
+}
+
+.day-log-item:first-child {
+  border-top: none;
+}
+
+.day-log-title {
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.day-log-title.done {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+.type-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.type-badge.type-inbox {
+  background: #eef0f5;
+  color: var(--text-dim);
+}
+
+.type-badge.type-task {
+  background: #ececff;
+  color: var(--primary);
+}
+
+.type-badge.type-idea {
+  background: #fff4d6;
+  color: #a8710a;
+}
