@@ -36,15 +36,6 @@
       <p class="empty-state" id="inbox-empty">Nothing here — jot something down above.</p>
     </section>
 
-    <section id="view-tasks" class="view">
-      <div class="view-header">
-        <h2>Tasks</h2>
-        <span class="count" id="tasks-count"></span>
-      </div>
-      <ul class="item-list" id="tasks-list"></ul>
-      <p class="empty-state" id="tasks-empty">No tasks yet.</p>
-    </section>
-
     <section id="view-ideas" class="view">
       <div class="view-header">
         <h2>Ideas</h2>
@@ -53,6 +44,15 @@
       <ul class="item-list" id="ideas-list"></ul>
       <p class="empty-state" id="ideas-empty">No ideas yet.</p>
     </section>
+
+    <section id="view-tasks" class="view">
+      <div class="view-header">
+        <h2>Tasks</h2>
+        <span class="count" id="tasks-count"></span>
+      </div>
+      <ul class="item-list" id="tasks-list"></ul>
+      <p class="empty-state" id="tasks-empty">No tasks yet.</p>
+    </section>
   </main>
 
   <nav class="bottom-nav">
@@ -60,13 +60,13 @@
       <span class="nav-icon">📥</span>
       <span>Inbox</span>
     </button>
-    <button class="nav-btn" data-view="tasks">
-      <span class="nav-icon">✅</span>
-      <span>Tasks</span>
-    </button>
     <button class="nav-btn" data-view="ideas">
       <span class="nav-icon">💡</span>
       <span>Ideas</span>
+    </button>
+    <button class="nav-btn" data-view="tasks">
+      <span class="nav-icon">✅</span>
+      <span>Tasks</span>
     </button>
   </nav>
 
